@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WISDOM MARINE</title>
+<link rel="icon" href="wisdom_marine_round.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<link href="test_style.css" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        #map{
+            height:50vh;
+            width:100%
+        }
+        .contact-section {
+            color: #fff;  /* white text on black background */
+            background: #000;
+            padding: 40px 20px;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .contact-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .contact-section p {
+            margin: 8px 0;
+            font-size: 1rem;
+        }
+
+        .whatsapp-button {
+            display: inline-block;
+            margin: 15px 0;
+            padding: 8px 12px;
+            background: #fff;
+            color: #25D366;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .whatsapp-button img {
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<div class="head">
+  <div class="Heading">
+    <a href="index.html">WISDOM MARINE EQUIPMENT LLC</a>
+  </div>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <div class="navigation" id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="Policies.html">Policies</a>
+    <a href="Contact.html">Contact</a>
+  </div>
+</div>
+<div class="content">
+  <div class="Heading about-heading">
+    CONTACT
+    <hr>
+  </div>
+    <section class="contact-section">
+        <h2>Visit Us and Experience Quality Firsthand</h2>
+        <p>Our doors are always open for you.</p>
+        <h3>WISDOM MARINE EQUIPMENT REPAIRING L.L.C</h3>
+        <p>Shed No. 385, Dubai Maritime City, Dubai, United Arab Emirates.</p>
+        <p>Phone Number: +971 4 5148821</p>
+        <p>E-Mail: operations@wisdommaritime.com</p>
+    </section>
+<hr>
+</div>
+<div id="map"></div>
+<script>
+    const map = L.map('map').setView([25.267406, 55.265170], 15); // rounded zoom level to integer for clarity
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>Kevin LLC</a>"
+    }).addTo(map);
+
+    var greenIcon = L.icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png',
+    shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+    iconSize:     [25, 41],
+    iconAnchor:   [12, 41],
+    popupAnchor:  [1, -34],
+    shadowSize:   [41, 41]
+    });
+
+    var marker = L.marker([25.267406, 55.265170], { icon: greenIcon }).addTo(map);
+    marker.bindPopup("Our Location\n25.267406, 55.265170");
+</script>
+<div class="footer">
+  <footer>
+    <div>
+      <p>&copy; 2025 Wisdom Marine Equipment LLC. All rights reserved.</p>
+      <p class="tagline">Excellence in marine solutions — powering your voyage safely and smartly.</p>
+      <div class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="Policies.html">Policies</a>
+        <a href="Contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+</div>
+<script src="scroll_titlebar.js"></script>
+<script>
+function toggleMenu() {
+  var menu = document.getElementById('navMenu');
+  menu.classList.toggle('show');
+}
+</script>
+
+</body>
+</html>
